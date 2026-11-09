@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block titulo %}Iniciar sesión{% endblock %}
+{% block contenido %}
+<section class="tarjeta">
+    <h1>Iniciar sesión</h1>
+
+    {% if error %}
+        <div class="aviso aviso-error">{{ error }}</div>
+    {% endif %}
+
+    <form id="form-login" method="post" action="{{ url_for('login') }}" novalidate>
+        <div class="grupo">
+            <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" name="usuario" value="{{ usuario or '' }}"
+                   placeholder="Tu usuario" autocomplete="username">
+            <small class="mensaje-campo"></small>
+        </div>
+
+        <div class="grupo">
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" name="contrasena"
+                   placeholder="Tu contraseña" autocomplete="current-password">
+            <small class="mensaje-campo"></small>
+        </div>
+
+        <button type="submit" class="boton">Entrar</button>
+    </form>
+
+    <p class="pie">¿No tienes cuenta? <a href="{{ url_for('registro') }}">Regístrate</a></p>
+</section>
+{% endblock %}

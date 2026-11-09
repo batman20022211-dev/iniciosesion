@@ -1,0 +1,185 @@
+:root {
+    --azul-fondo: #e3f2fd;
+    --azul-claro: #bbdefb;
+    --azul: #42a5f5;
+    --azul-oscuro: #1e6fb8;
+    --texto: #1f3a57;
+    --gris: #6b8299;
+    --blanco: #ffffff;
+    --error: #d93636;
+    --exito: #2e7d4f;
+    --radio: 18px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    color: var(--texto);
+    background-color: var(--azul-fondo);
+    background-image: linear-gradient(160deg, var(--azul-fondo) 0%, var(--azul-claro) 100%);
+}
+
+.contenedor {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px 16px;
+}
+
+.tarjeta {
+    width: 100%;
+    max-width: 400px;
+    background: var(--blanco);
+    border-radius: var(--radio);
+    padding: 36px 30px;
+    box-shadow: 0 12px 30px rgba(30, 111, 184, 0.18);
+}
+
+.tarjeta h1 {
+    margin: 0 0 24px;
+    text-align: center;
+    color: var(--azul-oscuro);
+    font-size: 1.7rem;
+}
+
+.tarjeta-centro {
+    text-align: center;
+}
+
+.tarjeta .saludo {
+    font-size: 2rem;
+    margin: 0 0 24px;
+}
+
+.grupo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.grupo label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+}
+
+.grupo input {
+    padding: 12px 14px;
+    font-size: 1rem;
+    color: var(--texto);
+    background: #f7fbff;
+    border: 2px solid var(--azul-claro);
+    border-radius: 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.grupo input:focus {
+    outline: none;
+    border-color: var(--azul);
+    box-shadow: 0 0 0 4px rgba(66, 165, 245, 0.2);
+}
+
+.grupo input.invalido {
+    border-color: var(--error);
+}
+
+.mensaje-campo {
+    min-height: 1em;
+    margin-top: 4px;
+    font-size: 0.85rem;
+    color: var(--error);
+}
+
+.boton {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #64b5f6, var(--azul-oscuro));
+    box-shadow: 0 6px 16px rgba(30, 111, 184, 0.3);
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.2s;
+}
+
+.boton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(30, 111, 184, 0.35);
+}
+
+.boton:active {
+    transform: translateY(0);
+}
+
+.boton-secundario {
+    margin-top: 8px;
+    background: #fff;
+    color: var(--azul-oscuro);
+    border: 2px solid var(--azul);
+    box-shadow: none;
+}
+
+.pie {
+    margin: 22px 0 0;
+    text-align: center;
+    color: var(--gris);
+}
+
+.pie a {
+    color: var(--azul-oscuro);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.pie a:hover {
+    text-decoration: underline;
+}
+
+.aviso {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+}
+
+.tarjeta .aviso {
+    margin-bottom: 16px;
+}
+
+.aviso-error {
+    background: #fdecec;
+    color: var(--error);
+    border: 1px solid #f5b5b5;
+}
+
+.aviso-exito {
+    background: #e6f6ec;
+    color: var(--exito);
+    border: 1px solid #a9dfbd;
+}
+
+.aviso-aviso {
+    background: #e8f3ff;
+    color: var(--azul-oscuro);
+    border: 1px solid #b7d9f7;
+}
+
+@media (max-width: 480px) {
+    .tarjeta {
+        padding: 28px 20px;
+    }
+}

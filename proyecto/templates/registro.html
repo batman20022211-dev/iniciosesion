@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block titulo %}Crear cuenta{% endblock %}
+{% block contenido %}
+<section class="tarjeta">
+    <h1>Crear cuenta</h1>
+
+    {% if error %}
+        <div class="aviso aviso-error">{{ error }}</div>
+    {% endif %}
+
+    <form id="form-registro" method="post" action="{{ url_for('registro') }}" novalidate>
+        <div class="grupo">
+            <label for="reg-correo">Correo</label>
+            <input type="email" id="reg-correo" name="correo" value="{{ valores.correo }}"
+                   placeholder="tu@correo.com" autocomplete="email">
+            <small class="mensaje-campo"></small>
+        </div>
+
+        <div class="grupo">
+            <label for="reg-usuario">Usuario</label>
+            <input type="text" id="reg-usuario" name="usuario" value="{{ valores.usuario }}"
+                   placeholder="Elige un usuario" autocomplete="username">
+            <small class="mensaje-campo"></small>
+        </div>
+
+        <div class="grupo">
+            <label for="reg-contrasena">Contraseña</label>
+            <input type="password" id="reg-contrasena" name="contrasena"
+                   placeholder="Mínimo 6 caracteres" autocomplete="new-password">
+            <small class="mensaje-campo"></small>
+        </div>
+
+        <div class="grupo">
+            <label for="reg-confirmar">Confirmar contraseña</label>
+            <input type="password" id="reg-confirmar" name="confirmar"
+                   placeholder="Repite la contraseña" autocomplete="new-password">
+            <small class="mensaje-campo"></small>
+        </div>
+
+        <button type="submit" class="boton">Registrarme</button>
+    </form>
+
+    <p class="pie">¿Ya tienes cuenta? <a href="{{ url_for('login') }}">Inicia sesión</a></p>
+</section>
+{% endblock %}
